@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Branding Display</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        img {
+            max-width: 80%;
+            max-height: 80vh;
+            margin-top: 20px;
+        }
+        select {
+            font-size: 16px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Branding Display</h1>
+
+    <label for="imageSelect">Select Image:</label>
+    <select id="imageSelect" onchange="changeImage()">
+        <option value="https://i.ibb.co/5hRfLrW8/Studio-1a.png">Tridwr FM</option>
+        <option value="https://i.ibb.co/99NnRm1t/2.png">On Air</option>
+        <option value="https://i.ibb.co/gZmNdzvW/3.png">Off Air</option>
+    </select>
+
+    <img id="displayImage" src="https://i.ibb.co/5hRfLrW8/Studio-1a.png" alt="Branding Image">
+
+    <script>
+        function changeImage() {
+            var selectBox = document.getElementById("imageSelect");
+            var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+            document.getElementById("displayImage").src = selectedValue;
+        }
+    </script>
+</body>
+</html>
